@@ -2,29 +2,14 @@ local ls = require("luasnip")
 local ls_extras = require("luasnip.extras")
 
 local s = ls.snippet
-local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
-local l = ls_extras.lambda
 local r = ls_extras.rep
-local p = ls_extras.partial
-local m = ls_extras.match
-local n = ls_extras.nonempty
-local dl = ls_extras.dynamic_lambda
-local types = require("luasnip.util.types")
 
 return {
   s("read", {
-    c(1, {
-      t("int"),
-      t("unsigned int"),
-      t("long long"),
-      t("unsigned long long"),
-      i(),
-    }),
+    i(1, "int"),
     t({ " Read() {", "\t" }),
     r(1),
     t({
@@ -33,7 +18,7 @@ return {
       "\twhile (!isdigit(ch = getchar())) continue;",
       "\tdo {",
       "\t\tres = res * 10 + ch - '0';",
-      "\t} while (isdigit(ch = getchar()));",
+      "\t} while (isdigit(ch = getchar()));  // NOLINT",
       "\treturn res;",
       "}",
     }),
@@ -56,13 +41,7 @@ return {
       "",
       "",
     }),
-    c(1, {
-      t("int"),
-      t("unsigned int"),
-      t("long long"),
-      t("unsigned long long"),
-      i(),
-    }),
+    i(1, "int"),
     t({ " Read() {", "\t" }),
     r(1),
     t({
@@ -71,7 +50,7 @@ return {
       "\twhile (!isdigit(ch = ReadChar())) continue;",
       "\tdo {",
       "\t\tres = res * 10 + ch - '0';",
-      "\t} while (isdigit(ch = ReadChar()));",
+      "\t} while (isdigit(ch = ReadChar()));  // NOLINT",
       "\treturn res;",
       "}",
     }),
@@ -79,11 +58,7 @@ return {
   }),
 
   s("readneg", {
-    c(1, {
-      t("int"),
-      t("long long"),
-      i(),
-    }),
+    i(1, "int"),
     t({ " Read() {", "\t" }),
     r(1),
     t({
@@ -93,7 +68,7 @@ return {
       "\twhile (!isdigit(ch = getchar())) neg |= (ch == '-');",
       "\tdo {",
       "\t\tres = res * 10 + ch - '0';",
-      "\t} while (isdigit(ch = getchar()));",
+      "\t} while (isdigit(ch = getchar()));  // NOLINT",
       "\treturn neg ? -res : res;",
       "}",
     }),
@@ -116,11 +91,7 @@ return {
       "",
       "",
     }),
-    c(1, {
-      t("int"),
-      t("long long"),
-      i(),
-    }),
+    i(1, "int"),
     t({ " Read() {", "\t" }),
     r(1),
     t({
@@ -130,7 +101,7 @@ return {
       "\twhile (!isdigit(ch = ReadChar())) neg |= (ch == '-');",
       "\tdo {",
       "\t\tres = res * 10 + ch - '0';",
-      "\t} while (isdigit(ch = ReadChar()));",
+      "\t} while (isdigit(ch = ReadChar()));  // NOLINT",
       "\treturn neg ? -res : res;",
       "}",
     }),
