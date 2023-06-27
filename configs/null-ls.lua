@@ -17,7 +17,7 @@ local sources = {
   diagnostics.selene,
 
   -- cpp
-  formatting.clang_format.with({ extra_args = { "-style=Google" } }),
+  formatting.clang_format,
   diagnostics.cpplint,
 
   -- python
