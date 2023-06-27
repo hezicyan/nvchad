@@ -82,6 +82,8 @@ M.override = {
   ["@keyword.return"] = { italic = true },
   ["@keyword.function"] = { italic = true },
   ["@keyword.operator"] = { italic = true },
+
+  DiffChange = { fg = "nord_blue" },
 }
 
 ---@type HLTable
