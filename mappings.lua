@@ -2,6 +2,11 @@
 local M = {}
 
 M.general = {
+  i = {
+    ["<C-a>"] = { "<ESC>^i", "Beginning of line" },
+    ["<C-d>"] = { "<Delete>", "Delete char under cursor" },
+  },
+
   n = {
     -- telescope
     ["<leader>fk"] = { "<cmd>Telescope keymaps<CR>", "Find keymaps" },
