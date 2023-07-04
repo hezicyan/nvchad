@@ -20,3 +20,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("custom.runner")
+
+if vim.g.neovide then
+  vim.o.guifont = "CaskaydiaCove Nerd Font:h12"
+end
