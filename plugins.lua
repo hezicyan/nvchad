@@ -67,6 +67,7 @@ local plugins = {
     config = function()
       require("better_escape").setup({
         mapping = { "jk" },
+        clear_empty_lines = true,
       })
     end,
   },
