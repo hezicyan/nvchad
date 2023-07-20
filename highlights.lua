@@ -83,6 +83,11 @@ M.override = {
   ["@keyword.function"] = { italic = true },
   ["@keyword.operator"] = { italic = true },
 
+  ["@attribute"] = {
+    fg = "teal",
+    italic = true,
+  },
+
   DiffChange = { fg = "nord_blue" },
 }
 
